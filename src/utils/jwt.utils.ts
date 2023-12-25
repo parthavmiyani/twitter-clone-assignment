@@ -1,13 +1,9 @@
 import jwt from 'jsonwebtoken';
 
-class JWT {
-  verify(token: string): any {
-    return jwt.verify(token, `${process.env.JWT_SECRET}`);
-  }
+export const verify = (token: string) => {
+  return jwt.verify(token, `${process.env.JWT_SECRET}`);
+};
 
-  sign(data: object) {
-    return jwt.sign(data, `${process.env.JWT_SECRET}`, { expiresIn: '7d' });
-  }
-}
-
-export default new JWT();
+export const sign = (data: object) => {
+  return jwt.sign(data, `${process.env.JWT_SECRET}`, { expiresIn: '7d' });
+};

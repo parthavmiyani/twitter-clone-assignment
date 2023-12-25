@@ -1,4 +1,4 @@
-import IConfig from '../interface/config.interface';
+import IConfig from './../interface/config.interface';
 
 const config: IConfig = {
   PORT: Number(process.env.PORT) || 3000,

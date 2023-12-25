@@ -1,8 +1,17 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import authRoutes from './auth/auth.routes';
+import userRoutes from './users/users.routes';
+import tweetRoutes from './tweet/tweet.routes';
 const router = Router();
 
-router.get('/', (req: Request, res: Response) => {
-  return res.send('Hello World!');
+router.get('/health', (req, res) => {
+  return res.status(200).send({
+    message: 'OK',
+  });
 });
 
-export default Router;
+router.use('/auth', authRoutes);
+router.use('/users', userRoutes);
+router.use('/tweet', tweetRoutes);
+
+export default router;

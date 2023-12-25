@@ -9,11 +9,9 @@
     "outDir": "dist",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true,
-    "paths": {
-      "src/*": ["./src/*"]
-    }
+    "skipLibCheck": true
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "files": ["./src/interface/index.d.ts"]
 }

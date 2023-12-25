@@ -6,7 +6,9 @@ export const connectToDatabase = () => {
   database.once('open', () => {
     console.log('DB Connected!');
   });
-  mongoose.set('debug', true);
+
+  // Uncomment this line to see mongoose queries in the console
+  // mongoose.set('debug', true);
   database.on('error', () => {
     console.log('Error connecting to database');
     process.exit(1);
